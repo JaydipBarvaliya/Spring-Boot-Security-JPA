@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeResourceController {
 
-
     @GetMapping("/")
     public String home() {
         return ("<h1>Welcome</h1>");
@@ -26,12 +25,4 @@ public class HomeResourceController {
         return ("<h1>Welcome Admin</h1>");
     }
 
-
-
-
-    @PreAuthorize("hasAnyRole('READ','WRITE')")
-    @GetMapping("/user")
-    public String readAndWrite() {
-        return ("<h1>Reading & Writing</h1>");
-    }
 }
